@@ -1,6 +1,7 @@
 import { getAllChannels, createChannel } from "@/database";
 
 export default async function handler(req, res) {
+  
   switch (req.method) {
     case "GET":
       // Get all channels

@@ -16,6 +16,7 @@ export default async function handler(req, res) {
     case "PUT":
       // Update a message by ID
       const { text } = req.body;
+      const userName = req.body.userName;
       if (!text) {
         res.status(400).json({ message: "Missing message text" });
         break;

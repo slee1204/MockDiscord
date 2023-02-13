@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       const newMessage = await createMessage(text, channelId, userName);
       res.status(201).json(newMessage)
       break;
-      
+    default:
       res.status(405).end();
   }
 }

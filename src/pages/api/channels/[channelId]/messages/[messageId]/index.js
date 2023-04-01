@@ -15,10 +15,14 @@ export default async function handler(req, res) {
       break;
     case "PUT":
       // Update a message by ID
-      const { text } = req.body;
+      const text = req.body.text;
       const userName = req.body.userName;
       if (!text) {
         res.status(400).json({ message: "Missing message text" });
+        break;
+      }
+      if (!userName) {
+        res.status(400).json({ message: "Missing user name" });
         break;
       }
       const updatedMessage = await updateMessageById(messageId, text);

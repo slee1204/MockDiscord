@@ -11,7 +11,8 @@ export default async function handler(req, res) {
       break
     case "POST":
       // Create a new message
-      const { text, userName } = req.body;
+      const text = req.body.text;
+      const userName = req.body.userName;
       if (!text || !userName) {
         res.status(400).json({ message: "Missing message text or user name" });
         break;

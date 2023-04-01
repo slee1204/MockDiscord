@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       break;
     case "PUT":
       // Update a channel by id
-      const { name } = req.body;
+      const name = req.body.name;
       if (!name) {
         res.status(400).json({ message: "Missing channel name" });
         break;

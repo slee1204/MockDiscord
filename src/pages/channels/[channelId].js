@@ -8,7 +8,7 @@ export default function Channel({channelId, messages: initialMessages}){
     const [userName, setUserName] = useState('');
     const [text, setText] = useState('');
     const [messages, setMessages] = useState(initialMessages);
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function Channel({channelId, messages: initialMessages}){
         const newMessage = result.data
         //append a new message to the messages array
         setMessages([...messages, newMessage]);
-        setLoading(false);
+        // setLoading(false);
     }
 
     return(
